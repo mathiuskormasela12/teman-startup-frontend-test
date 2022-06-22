@@ -98,3 +98,61 @@ export const HeroButton = styled.div`
 	margin: 1.5rem 0;
 	justify-content: flex-end;
 `;
+
+export const HeroCourse = styled.div`
+	margin-top: 1.5rem;
+`;
+
+export const HeroCourseHeader = styled.div`
+	margin-top: 1.5rem;
+	display: flex;
+`;
+
+export const HeroCourseHeaderTitle = styled.h1`
+	color: ${Colors.dark};
+	font-size: 1.3rem;
+	flex: 2;
+	text-transform: uppercase;
+`;
+
+export const HeroCourseHeaderSubtitle = styled.p`
+	color: ${Colors.dark};
+	font-size: 1rem;
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+`;
+
+export const HeroCourseMain = styled.div`
+	display: inline-flex;
+	margin: 2rem 0;
+`;
+
+export const Card = styled.div`
+	width: 15rem;
+	margin-right: 1.5rem;
+
+	&:last-child {
+		margin-right: 0;
+	}
+`;
+
+export const Image = styled.img`
+	width: 100%;
+	height: 13rem;
+	border-radius: 10px;
+`;
+
+export const CardTitleCourse = styled.h1`
+	font-family: ${Fonts.secondary};
+	color: ${Colors.dark};
+	font-size: 1.2rem;
+	margin-bottom: .9rem;
+`;
+
+export const CardSubtitleCourse = styled.p`
+	font-family: ${Fonts.tertiary};
+	color: ${Colors.dark};
+	font-size: 1rem;
+`;

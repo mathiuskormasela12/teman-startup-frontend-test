@@ -3,18 +3,27 @@
 import React, { useState, useEffect } from 'react';
 import {
   Button,
+  Card,
   CardSubtitle,
   CardTitle,
   Hero,
   HeroButton,
+  HeroCourse,
+  HeroCourseHeader,
+  HeroCourseHeaderSubtitle,
+  HeroCourseHeaderTitle,
+  HeroCourseMain,
   HeroHead,
   HeroSwipper,
   HeroSwipperContainer,
   ImageBackground,
+  Image,
   ScrollView,
   SliderButton,
   Subitle,
   Title,
+  CardTitleCourse,
+  CardSubtitleCourse,
 } from '../styles';
 
 // import all modules
@@ -123,6 +132,66 @@ export const Home: React.FC = () => {
           </HeroButton>
         </Container>
       </HeroSwipper>
+      <HeroCourse>
+        <Container size={85}>
+          <HeroCourseHeader>
+            <HeroCourseHeaderTitle>
+              Latets Courses
+            </HeroCourseHeaderTitle>
+            <HeroCourseHeaderSubtitle>
+              See More
+            </HeroCourseHeaderSubtitle>
+          </HeroCourseHeader>
+          <ScrollView>
+            <HeroCourseMain>
+              {data.map((item) => (
+                <Card key={item.id.toString()}>
+                  <Image
+                    src={item.thumbnail_src}
+                    alt={item.thumbnail_src}
+                  />
+                  <CardTitleCourse>{item.title}</CardTitleCourse>
+                  <CardSubtitleCourse>
+                    by
+                    {' '}
+                    {item.data_collaborator[0].name_collaborator}
+                  </CardSubtitleCourse>
+                </Card>
+              ))}
+            </HeroCourseMain>
+          </ScrollView>
+        </Container>
+      </HeroCourse>
+      <HeroCourse>
+        <Container size={85}>
+          <HeroCourseHeader>
+            <HeroCourseHeaderTitle>
+              LATEST BLUEPRINTS
+            </HeroCourseHeaderTitle>
+            <HeroCourseHeaderSubtitle>
+              See More
+            </HeroCourseHeaderSubtitle>
+          </HeroCourseHeader>
+          <ScrollView>
+            <HeroCourseMain>
+              {data.map((item) => (
+                <Card key={item.id.toString()}>
+                  <Image
+                    src={item.thumbnail_src}
+                    alt={item.thumbnail_src}
+                  />
+                  <CardTitleCourse>{item.title}</CardTitleCourse>
+                  <CardSubtitleCourse>
+                    by
+                    {' '}
+                    {item.data_collaborator[0].name_collaborator}
+                  </CardSubtitleCourse>
+                </Card>
+              ))}
+            </HeroCourseMain>
+          </ScrollView>
+        </Container>
+      </HeroCourse>
     </Hero>
   );
 };
