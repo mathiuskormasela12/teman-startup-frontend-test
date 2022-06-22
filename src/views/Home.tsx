@@ -60,12 +60,12 @@ export const Home: React.FC = () => {
 
   const handleNextSlider = () => {
     const currentIndex = cardIndex + 1;
+
     if (currentIndex < data.length) {
       setCardIndex(currentIndex);
-
       refs[currentIndex].current.scrollIntoView({
         behavior: 'smooth',
-        block: 'start',
+        block: 'end',
       });
     }
   };
@@ -77,7 +77,7 @@ export const Home: React.FC = () => {
 
       refs[currentIndex].current.scrollIntoView({
         behavior: 'smooth',
-        block: 'start',
+        block: 'end',
       });
     }
   };
