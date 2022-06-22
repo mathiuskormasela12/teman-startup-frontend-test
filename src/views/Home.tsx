@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 // ========== Home
 // import all modules
 import React, { useState, useEffect } from 'react';
@@ -24,6 +25,13 @@ import {
   Title,
   CardTitleCourse,
   CardSubtitleCourse,
+  Footer,
+  FooterTitle,
+  FooterSmalerTitle,
+  OrderedList,
+  List,
+  LoadingSection,
+  LoadingText,
 } from '../styles';
 
 // import all modules
@@ -32,13 +40,30 @@ import Service from '../service';
 
 export const Home: React.FC = () => {
   const [data, setData] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
   const [cardIndex, setCardIndex] = useState(0);
   const refs = data.reduce((acc, value, index) => {
     acc[index] = React.createRef();
     return acc;
   }, {});
 
+  const lists = [
+    'First, you need to register and make an account.',
+    'Log in to your new account',
+    'Choose the products you interested in',
+    'Follow the payment instructions',
+    "Voila, it's yours now",
+  ];
+
+  const secondLists = [
+    "I've purchased a product, how do I access it?",
+    'When will I receive my order?',
+    'How about physical products?',
+    "I can't find my purchased products, where to find them?",
+  ];
+
   const getAllData = async () => {
+    setLoading(true);
     try {
       const response = await Service.getAllData();
 
@@ -47,8 +72,11 @@ export const Home: React.FC = () => {
       } else {
         setData([]);
       }
+
+      setLoading(false);
     } catch (err) {
       setData([]);
+      setLoading(false);
       // eslint-disable-next-line no-console
       console.log(err);
     }
@@ -81,6 +109,16 @@ export const Home: React.FC = () => {
       });
     }
   };
+
+  if (loading) {
+    return (
+      <LoadingSection>
+        <LoadingText>
+          Loading...
+        </LoadingText>
+      </LoadingSection>
+    );
+  }
 
   return (
     <Hero>
@@ -192,6 +230,20 @@ export const Home: React.FC = () => {
           </ScrollView>
         </Container>
       </HeroCourse>
+      <Footer>
+        <Container size={85}>
+          <FooterTitle>
+            FREQUENTLY ASKED QUESTIONS
+          </FooterTitle>
+          <FooterSmalerTitle>
+            I’m interested. How do I get the products?
+          </FooterSmalerTitle>
+          <OrderedList>
+            {lists.map((item, index) => <List key={index.toString()}>{item}</List>)}
+          </OrderedList>
+          {secondLists.map((item, index) => <FooterSmalerTitle key={index.toString()}>{item}</FooterSmalerTitle>)}
+        </Container>
+      </Footer>
     </Hero>
   );
 };

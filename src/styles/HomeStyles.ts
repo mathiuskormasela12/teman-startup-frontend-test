@@ -6,7 +6,7 @@ import { Colors, Fonts } from '../themes';
 
 export const Hero = styled.div`
 	height: auto;
-	background-color: white;
+	background-color: #F5F5F5;
 `;
 
 export const HeroHead = styled.div`
@@ -80,13 +80,13 @@ export const SliderButton = styled.button`
 	outline: none;
 	border: none;
 	font-size: 1rem;
-	color: white;
+	color: #F5F5F5;
 	background-color: ${Colors.primary};
 	font-weight: bold;
 	border-radius: 100%;
 	width: 3rem;
 	height: 3rem;
-	color: white;
+	color: #F5F5F5;
 
 	&:first-child {
 		margin-right: .6rem;
@@ -155,4 +155,46 @@ export const CardSubtitleCourse = styled.p`
 	font-family: ${Fonts.tertiary};
 	color: ${Colors.dark};
 	font-size: 1rem;
+`;
+
+export const Footer = styled.footer`
+	background-color: #F5F5F5;
+	padding: 2rem 0;
+`;
+
+export const FooterTitle = styled.h1`
+	font-family: ${Fonts.secondaryBold};
+	color: ${Colors.dark};
+	font-size: 1.2rem;
+	margin-bottom: .9rem;
+`;
+
+export const FooterSmalerTitle = styled.h1`
+	font-family: ${Fonts.secondary};
+	color: ${Colors.dark};
+	font-size: 1rem;
+	margin-top: 1rem;
+`;
+
+export const OrderedList = styled.ol`
+	font-size: 1rem;
+	margin: 1rem 0 1.3rem 0;
+	padding-left: 1rem;
+`;
+
+export const List = styled.li`
+	margin-bottom: .5rem;
+	color: ${Colors.dark};
+`;
+
+export const LoadingSection = styled.div`
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
+
+export const LoadingText = styled.h1`
+	color: ${Colors.dark};
+	font-size: 1.8rem;
 `;
