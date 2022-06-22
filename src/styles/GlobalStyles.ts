@@ -5,6 +5,11 @@ import { Fonts } from '../themes';
 import Inter from '../fonts/Inter-Regular.ttf';
 import InterBold from '../fonts/Inter-Bold.ttf';
 import InterLight from '../fonts/Inter-Light.ttf';
+import Oswald from '../fonts/Oswald-Regular.ttf';
+import OswaldBold from '../fonts/Oswald-Bold.ttf';
+import OswaldLight from '../fonts/Oswald-Light.ttf';
+import Caveat from '../fonts/Caveat-Regular.ttf';
+import CaveatBold from '../fonts/Caveat-Bold.ttf';
 
 export const GlobalStyles = createGlobalStyle`
 	@font-face {
@@ -20,6 +25,31 @@ export const GlobalStyles = createGlobalStyle`
 	@font-face {
 		src: url(${InterLight}) format('truetype');
 		font-family: inter-light; 
+	}
+
+	@font-face {
+		src: url(${Oswald}) format('truetype');
+		font-family: oswald; 
+	}
+	
+	@font-face {
+		src: url(${OswaldBold}) format('truetype');
+		font-family: oswald-bold; 
+	}
+
+	@font-face {
+		src: url(${OswaldLight}) format('truetype');
+		font-family: oswald-light; 
+	}
+
+	@font-face {
+		src: url(${Caveat}) format('truetype');
+		font-family: caveat; 
+	}
+	
+	@font-face {
+		src: url(${CaveatBold}) format('truetype');
+		font-family: caveat-bold; 
 	}
 
 	html {

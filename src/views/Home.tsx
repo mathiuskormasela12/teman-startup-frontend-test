@@ -1,13 +1,13 @@
-// ========== JoinChatRoom
+// ========== Home
 // import all modules
 import React from 'react';
 
-// import all components
+// import all modules
 import { Head } from '../components';
 
-export const JoinChatRoom: React.FC = () => (
+export const Home: React.FC = () => (
   <div>
     <Head title="Chat Room" />
-    <h1>Join Chat Room</h1>
+    <h1>Chat Room</h1>
   </div>
 );

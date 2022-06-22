@@ -2,6 +2,11 @@
 
 export const Fonts = {
   base: 'inter',
-  bold: 'inter-bold',
-  light: 'inter-light',
+  baseBold: 'inter-bold',
+  baseLight: 'inter-light',
+  secondary: 'oswald',
+  secondaryBold: 'oswald-bold',
+  secondaryLight: 'oswald-light',
+  tertiary: 'caveat',
+  tertiaryBold: 'caveat-bold',
 };

@@ -8,8 +8,7 @@ import persistedStore from './redux/store';
 import { GlobalStyles } from './styles';
 
 // import all views
-import { JoinChatRoom } from './views/JoinChatRoom';
-import { ChatRoom } from './views/ChatRoom';
+import { Home } from './views/Home';
 
 const App: React.FC = () => {
   const { store, persistor } = persistedStore;
@@ -19,8 +18,7 @@ const App: React.FC = () => {
       <PersistGate persistor={persistor}>
         <BrowserRouter>
           <Routes>
-            <Route path="/join" element={<JoinChatRoom />} />
-            <Route path="/" element={<ChatRoom />} />
+            <Route path="/" element={<Home />} />
           </Routes>
         </BrowserRouter>
         <GlobalStyles />
